@@ -4,7 +4,7 @@ import { GridComponent, Inject, ColumnsDirective, ColumnDirective, Search, Page 
 import { employeesData, employeesGrid } from '../data/dummy';
 import { Header } from '../components';
 
-const Employees = () => {
+const Inventory = () => {
   const toolbarOptions = ['Search'];
 
   const editing = { allowDeleting: true, allowEditing: true };
@@ -31,4 +31,4 @@ const Employees = () => {
     </div>
   );
 };
-export default Employees;
+export default Inventory;

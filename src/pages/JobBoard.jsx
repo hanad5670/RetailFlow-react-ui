@@ -8,7 +8,7 @@ import { Header } from '../components';
 // eslint-disable-next-line react/destructuring-assignment
 const PropertyPane = (props) => <div className="mt-5">{props.children}</div>;
 
-const Scheduler = () => {
+const JobBoard = () => {
   const [scheduleObj, setScheduleObj] = useState();
 
   const change = (args) => {
@@ -59,4 +59,4 @@ const Scheduler = () => {
   );
 };
 
-export default Scheduler;
+export default JobBoard;

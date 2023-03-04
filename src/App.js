@@ -4,7 +4,7 @@ import { FiSettings } from 'react-icons/fi';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
 import { Navbar, Footer, Sidebar, ThemeSettings } from './components';
-import { Ecommerce, Orders, Calendar, Employees, Stacked, Pyramid, Customers, Kanban, Line, Area, Bar, Pie, Financial, ColorPicker, ColorMapping, Editor } from './pages';
+import { Home, Orders, Inventory, Stacked, Pyramid, SalesAndRevenue, Line, Area, Bar, Pie, Financial, ColorPicker, ColorMapping, JobBoard, ManageTasks, ManageEmployeeTasks, PowerBi } from './pages';
 import './App.css';
 
 import { useStateContext } from './contexts/ContextProvider';
@@ -65,22 +65,23 @@ const App = () => {
 
               <Routes>
                 {/* dashboard  */}
-                <Route path="/" element={(<Ecommerce />)} />
-                <Route path="/ecommerce" element={(<Ecommerce />)} />
+                <Route path="/" element={(<Home />)} />
+                <Route path="/home" element={(<Home />)} />
 
                 {/* pages  */}
+                <Route path="/inventory" element={<Inventory />} />
                 <Route path="/orders" element={<Orders />} />
-                <Route path="/employees" element={<Employees />} />
-                <Route path="/customers" element={<Customers />} />
+                <Route path="/salesandrevenue" element={<SalesAndRevenue />} />
 
                 {/* apps  */}
-                <Route path="/kanban" element={<Kanban />} />
-                <Route path="/editor" element={<Editor />} />
-                <Route path="/calendar" element={<Calendar />} />
+                <Route path="/managetasks" element={<ManageTasks />} />
+                <Route path="/manageemployeetasks" element={<ManageEmployeeTasks />} />
+                <Route path="/jobboard" element={<JobBoard />} />
                 <Route path="/color-picker" element={<ColorPicker />} />
 
                 {/* charts  */}
                 <Route path="/line" element={<Line />} />
+                <Route path="/powerbi" element={<PowerBi />} />
                 <Route path="/area" element={<Area />} />
                 <Route path="/bar" element={<Bar />} />
                 <Route path="/pie" element={<Pie />} />
