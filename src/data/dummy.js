@@ -702,7 +702,7 @@ export const links = [
     title: 'Sales Management',
     links: [
       {
-        name: 'Inventory',
+        name: 'Employees',
         icon: <AiOutlineShoppingCart />,
       },
       {
@@ -710,7 +710,7 @@ export const links = [
         icon: <IoMdContacts />,
       },
       {
-        name: 'Sales And Revenue',
+        name: 'Customers',
         icon: <RiContactsLine />,
       },
     ],
@@ -725,19 +725,6 @@ export const links = [
       {
         name: 'Manage Tasks',
         icon: <BsKanban />,
-      },
-      {
-        name: 'Manage Employee Tasks',
-        icon: <FiEdit />,
-      },
-    ],
-  },
-  {
-    title: 'Charts',
-    links: [
-      {
-        name: 'PowerBi',
-        icon: <AiOutlineStock />,
       },
     ],
   },

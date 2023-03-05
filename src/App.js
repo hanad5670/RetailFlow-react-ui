@@ -4,7 +4,7 @@ import { FiSettings } from 'react-icons/fi';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
 import { Navbar, Footer, Sidebar, ThemeSettings } from './components';
-import { Home, Orders, Inventory, Stacked, Pyramid, SalesAndRevenue, Line, Area, Bar, Pie, Financial, ColorPicker, ColorMapping, JobBoard, ManageTasks, ManageEmployeeTasks, PowerBi } from './pages';
+import { Home, Orders, Stacked, Pyramid, Line, Area, Bar, Pie, Financial, ColorPicker, ColorMapping, JobBoard, ManageTasks, ManageEmployeeTasks, PowerBi, Employees, Customers } from './pages';
 import './App.css';
 
 import { useStateContext } from './contexts/ContextProvider';
@@ -71,9 +71,9 @@ const App = () => {
                 <Route path="/home" element={(<Home setSignUpMode={setSignUpMode} />)} />
 
                 {/* pages  */}
-                <Route path="/inventory" element={<Inventory />} />
+                <Route path="/employees" element={<Employees/>} />
                 <Route path="/orders" element={<Orders />} />
-                <Route path="/salesandrevenue" element={<SalesAndRevenue />} />
+                <Route path="/customers" element={<Customers />} />
 
                 {/* apps  */}
                 <Route path="/managetasks" element={<ManageTasks />} />

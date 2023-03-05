@@ -4,7 +4,7 @@ import { GridComponent, ColumnsDirective, ColumnDirective, Page, Selection, Inje
 import { customersData, customersGrid } from '../data/dummy';
 import { Header } from '../components';
 
-const SalesAndRevenue = () => {
+const Customers = () => {
   const selectionsettings = { persistSelection: true };
   const toolbarOptions = ['Delete'];
   const editing = { allowDeleting: true, allowEditing: true };
@@ -32,4 +32,4 @@ const SalesAndRevenue = () => {
   );
 };
 
-export default SalesAndRevenue;
+export default Customers;
