@@ -3185,6 +3185,7 @@ export const stackedPrimaryYAxis = {
 };
 
 export const kanbanData = [
+  // Make a api call to get all user tickets 
   {
     Id: 'Task 1',
     Title: 'Task - 29001',
@@ -3195,9 +3196,6 @@ export const kanbanData = [
     Tags: 'Analyze,Customer',
     Estimate: 3.5,
     Assignee: 'Nancy Davloio',
-    RankId: 1,
-    Color: '#02897B',
-    ClassName: 'e-story, e-low, e-nancy-davloio',
   },
   {
     Id: 'Task 2',
