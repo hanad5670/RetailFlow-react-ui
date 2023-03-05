@@ -46,6 +46,25 @@
   border: none;
 }
 
+@font-face {
+  font-family: 'Ananda Black Font';
+  src: url('https://www.logo.wine/a/logo/Microsoft/Microsoft-Logo.wine.svg');
+}
+
+.font-logo {
+  font-family: 'Ananda Black Font', sans-serif;
+}
+
+button {
+  display: inline-flex;
+  align-items: center;
+}
+
+button img {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+
 #_dialog-content {
     height: 500px;
 }
