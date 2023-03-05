@@ -57,6 +57,24 @@ export const getAllTasks = async () => {
     }
 };
 
+export const getTeamTasks = async () => {
+  console.log("HERE!");
+  const allUsers = await axios.get(`/api/user`);
+  if (allUsers) {
+    const user = allUsers.data[0];
+    console.log(user?.teamId)
+    return await axios
+      .get(`/api/team/${user.teamId}`)
+      .then((res) => {
+        console.log(res.data);
+        return Promise.resolve(res.data);
+      })
+      .catch((err) => {
+        return Promise.reject(err);
+      });
+  }
+};
+
 export const scheduleData = [
   {
     Id: 1,
