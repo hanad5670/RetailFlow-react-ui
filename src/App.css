@@ -46,7 +46,6 @@
   border: none;
 }
 
-
 @font-face {
   font-family: 'Ananda Black Font';
   src: url('https://www.logo.wine/a/logo/Microsoft/Microsoft-Logo.wine.svg');
@@ -65,4 +64,21 @@ button img {
   width: 1.5rem;
   height: 1.5rem;
   margin-right: 0.5rem;
+
+#_dialog-content {
+    height: 500px;
+}
+
+.e-dialog .e-dlg-content {
+    display: contents;
+}
+
+div.e-dialog:nth-of-type(1) {
+    max-height: none !important;
+    max-width: none !important;
+    width: 800px;
+}
+
+div.e-dlg-container.e-dlg-center-center {
+    position: fixed !important;
 }
