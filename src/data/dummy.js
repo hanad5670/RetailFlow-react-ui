@@ -20,6 +20,7 @@ import product5 from './product5.jpg';
 import product6 from './product6.jpg';
 import product7 from './product7.jpg';
 import axios from 'axios'
+import { useStateContext } from '../contexts/ContextProvider';
 
 
 export const gridOrderImage = (props) => (
@@ -43,9 +44,7 @@ export const gridOrderStatus = (props) => (
 );
 
 export const getAllTasks = async () => {
-    const allUsers = await axios.get(`/api/user`);
-    if (allUsers) {
-      const user = allUsers.data[0];
+      const { user } = useStateContext();
       return await axios
         .get(`/api/user/${user._id}`)
         .then((res) => {
@@ -54,7 +53,6 @@ export const getAllTasks = async () => {
         .catch((err) => {
           return Promise.reject(err);
         });
-    }
 };
 
 export const scheduleData = [

@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { BsCurrencyDollar } from 'react-icons/bs';
 import { GoPrimitiveDot } from 'react-icons/go';
 import { IoIosMore } from 'react-icons/io';
 import { DropDownListComponent } from '@syncfusion/ej2-react-dropdowns';
+import axios from 'axios'
 
 import { Stacked, Pie, Button, LineChart, SparkLine } from '../components';
 import { earningData, medicalproBranding, recentTransactions, weeklyStats, dropdownData, SparklineAreaData, ecomPieChartData } from '../data/dummy';
@@ -15,8 +16,20 @@ const DropDown = ({ currentMode }) => (
   </div>
 );
 
-const Home = () => {
-  const { currentColor, currentMode } = useStateContext();
+const Home = ({setSignUpMode}) => {
+  const { currentColor, currentMode, setActiveMenu, setUser } = useStateContext();
+
+  useEffect(() => {
+    setSignUpMode(false)
+    setActiveMenu(true)
+    const fetchCurrentUser = async() => {
+      await axios.get('/current-user').then((res) => {
+        setUser(res.data)
+        console.log(res.data)
+      }).catch(err=> console.log(err))
+    }
+    fetchCurrentUser()
+  }, [])
 
   return (
     <div className="mt-24">
