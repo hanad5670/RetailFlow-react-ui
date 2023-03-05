@@ -59,3 +59,7 @@ div.e-dialog:nth-of-type(1) {
     max-width: none !important;
     width: 800px;
 }
+
+div.e-dlg-container.e-dlg-center-center {
+    position: fixed !important;
+}

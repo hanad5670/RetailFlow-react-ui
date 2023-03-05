@@ -6,7 +6,7 @@ import { kanbanData, kanbanGrid } from '../data/dummy';
 import { Header } from '../components';
 
 const ManageTasks = () => {
-  const [status, setStatus] = React.useState({ hideDialog: true });
+  const [status, setStatus] = React.useState({ hideDialog: false });
   function onOverlayClick() {
     setStatus({ hideDialog: false });
   }
@@ -29,7 +29,8 @@ const ManageTasks = () => {
       <KanbanComponent
         id="kanban"
         keyField="Status"
-        swimlaneSettings={{ keyField: 'Assignee' }}dataSource={kanbanData}
+        swimlaneSettings={{ keyField: 'Assignee' }}
+        dataSource={kanbanData}
         cardSettings={{ contentField: 'Summary', headerField: 'Id' }}
       >
         <ColumnsDirective>
