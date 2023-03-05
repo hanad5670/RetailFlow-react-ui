@@ -45,3 +45,21 @@
 .e-input-group:not(.e-float-icon-left), .e-input-group.e-success:not(.e-float-icon-left), .e-input-group.e-warning:not(.e-float-icon-left), .e-input-group.e-error:not(.e-float-icon-left), .e-input-group.e-control-wrapper:not(.e-float-icon-left), .e-input-group.e-control-wrapper.e-success:not(.e-float-icon-left), .e-input-group.e-control-wrapper.e-warning:not(.e-float-icon-left), .e-input-group.e-control-wrapper.e-error:not(.e-float-icon-left){
   border: none;
 }
+
+#_dialog-content {
+    height: 500px;
+}
+
+.e-dialog .e-dlg-content {
+    display: contents;
+}
+
+div.e-dialog:nth-of-type(1) {
+    max-height: none !important;
+    max-width: none !important;
+    width: 800px;
+}
+
+div.e-dlg-container.e-dlg-center-center {
+    position: fixed !important;
+}

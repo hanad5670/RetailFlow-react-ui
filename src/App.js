@@ -8,6 +8,7 @@ import { Home, Orders, Inventory, Stacked, Pyramid, SalesAndRevenue, Line, Area,
 import './App.css';
 
 import { useStateContext } from './contexts/ContextProvider';
+import LandingPage from './pages/LandingPage';
 
 const App = () => {
   const { setCurrentColor, setCurrentMode, currentMode, activeMenu, currentColor, themeSettings, setThemeSettings } = useStateContext();
@@ -65,7 +66,7 @@ const App = () => {
 
               <Routes>
                 {/* dashboard  */}
-                <Route path="/" element={(<Home />)} />
+                <Route path="/" element={(<LandingPage />)} />
                 <Route path="/home" element={(<Home />)} />
 
                 {/* pages  */}
