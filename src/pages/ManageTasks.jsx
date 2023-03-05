@@ -6,15 +6,15 @@ import { kanbanData, kanbanGrid } from '../data/dummy';
 import { Header } from '../components';
 
 const ManageTasks = () => {
-  const [status, setStatus] = React.useState({ hideDialog: false });
+  const [boxStatus, setBoxStatus] = React.useState({ hideDialog: false });
   function onOverlayClick() {
-    setStatus({ hideDialog: false });
+    setBoxStatus({ hideDialog: false });
   }
   function dialogClose() {
-    setStatus({ hideDialog: false });
+    setBoxStatus({ hideDialog: false });
   }
   function handleClick() {
-    setStatus({ hideDialog: true });
+    setBoxStatus({ hideDialog: true });
   }
 
   return (
@@ -23,8 +23,8 @@ const ManageTasks = () => {
       <div className="App" id="dialog-target">
         {/* eslint-disable-next-line jsx-a11y/no-redundant-roles,react/button-has-type */}
         <button className="e-control e-btn" id="targetButton1" role="button" onClick={handleClick.bind(this)}>Open</button>
-        {/* eslint-disable-next-line react/jsx-no-bind */}
-        <DialogComponent content={TaskForm} isModal target="#dialog-target" visible={status.hideDialog} close={dialogClose} overlayClick={onOverlayClick} />
+        {/* eslint-disable-next-line react/jsx-no-bind,no-restricted-globals */}
+        <DialogComponent content={TaskForm} isModal target="#dialog-target" visible={boxStatus.hideDialog} close={dialogClose} overlayClick={onOverlayClick} />
       </div>
       <KanbanComponent
         id="kanban"

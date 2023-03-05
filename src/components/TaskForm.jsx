@@ -1,4 +1,5 @@
 import React from 'react';
+import Dropdown from './Dropdown';
 
 const TaskForm = () => (
   <div className="relative flex-col overflow-hidden ">
@@ -27,29 +28,6 @@ const TaskForm = () => (
             focus:ring-opacity-50
           "
               placeholder="What will be the task?"
-            />
-          </label>
-        </div>
-        <div className="mb-2">
-          {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-          <label>
-            <span className="text-gray-700">Choose an assignee</span>
-            <input
-              name="email"
-              type="email"
-              className="
-            block
-            w-full
-            mt-2 pl-2 py-2
-            border-gray-300
-            rounded-md
-            shadow-sm
-            focus:border-indigo-300
-            focus:ring
-            focus:ring-indigo-200
-            focus:ring-opacity-50
-          "
-              placeholder="zak@gmail.com"
               required
             />
           </label>
@@ -57,9 +35,16 @@ const TaskForm = () => (
         <div className="mb-2">
           {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
           <label>
-            <span className="text-gray-700">Message</span>
+            <span className="text-gray-700">Choose an assignee: </span>
+            <Dropdown />
+          </label>
+        </div>
+        <div className="mb-2">
+          {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+          <label>
+            <span className="text-gray-700">Description</span>
             <textarea
-              name="message"
+              name="description"
               className="
             block
             w-full
@@ -73,6 +58,7 @@ const TaskForm = () => (
             focus:ring-opacity-50
           "
               rows="5"
+              required
             />
           </label>
         </div>
@@ -92,7 +78,7 @@ const TaskForm = () => (
             hover:bg-indigo-800
           "
           >
-            Contact Us
+            Create
           </button>
         </div>
         <div />

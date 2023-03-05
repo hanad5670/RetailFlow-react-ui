@@ -8,6 +8,7 @@ import { MdOutlineSupervisorAccount } from 'react-icons/md';
 import { HiOutlineRefresh } from 'react-icons/hi';
 import { TiTick } from 'react-icons/ti';
 import { GrLocation } from 'react-icons/gr';
+import axios from 'axios';
 import avatar from './avatar.jpg';
 import avatar2 from './avatar2.jpg';
 import avatar3 from './avatar3.png';
@@ -19,8 +20,6 @@ import product4 from './product4.jpg';
 import product5 from './product5.jpg';
 import product6 from './product6.jpg';
 import product7 from './product7.jpg';
-import axios from 'axios'
-
 
 export const gridOrderImage = (props) => (
   <div>
@@ -42,19 +41,16 @@ export const gridOrderStatus = (props) => (
   </button>
 );
 
+// eslint-disable-next-line consistent-return
 export const getAllTasks = async () => {
-    const allUsers = await axios.get(`/api/user`);
-    if (allUsers) {
-      const user = allUsers.data[0];
-      return await axios
-        .get(`/api/user/${user._id}`)
-        .then((res) => {
-          return Promise.resolve(res.data);
-        })
-        .catch((err) => {
-          return Promise.reject(err);
-        });
-    }
+  const allUsers = await axios.get('/api/user');
+  if (allUsers) {
+    const user = allUsers.data[0];
+    return await axios
+      .get(`/api/user/${user._id}`)
+      .then((res) => Promise.resolve(res.data))
+      .catch((err) => Promise.reject(err));
+  }
 };
 
 export const scheduleData = [
@@ -3202,7 +3198,7 @@ export const stackedPrimaryYAxis = {
 };
 
 export const kanbanData = [
-  // Make a api call to get all user tickets 
+  // Make a api call to get all user tickets
   {
     Id: 'Task 1',
     Title: 'Task - 29001',
