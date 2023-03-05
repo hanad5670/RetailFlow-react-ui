@@ -24,12 +24,7 @@ const ManageTasks = () => {
         {/* eslint-disable-next-line jsx-a11y/no-redundant-roles,react/button-has-type */}
         <button className="e-control e-btn" id="targetButton1" role="button" onClick={handleClick.bind(this)}>Open</button>
         {/* eslint-disable-next-line react/jsx-no-bind */}
-        <DialogComponent width="250px" isModal target="#dialog-target" visible={status.hideDialog} close={dialogClose} overlayClick={onOverlayClick}>
-          <div>
-            <TaskForm />
-          </div>
-
-        </DialogComponent>
+        <DialogComponent content={TaskForm} isModal target="#dialog-target" visible={status.hideDialog} close={dialogClose} overlayClick={onOverlayClick} />
       </div>
       <KanbanComponent
         id="kanban"

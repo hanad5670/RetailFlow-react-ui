@@ -1,8 +1,8 @@
 import React from 'react';
 
 const TaskForm = () => (
-  <div className="relative flex flex-col justify-center min-h-screen overflow-hidden ">
-    <div className="w-full p-6 m-auto bg-white rounded-md shadow-xl shadow-rose-600/40 ring-2 ring-indigo-600 lg:max-w-xl">
+  <div className="relative flex-col overflow-hidden ">
+    <div className="w-full p-6 m-auto bg-white rounded-md shadow-xl shadow-rose-600/40 ring-2 ring-indigo-600">
       <h1 className="text-3xl font-semibold text-center text-indigo-700 underline uppercase decoration-wavy">
         Contact Form
       </h1>
@@ -17,7 +17,7 @@ const TaskForm = () => (
               className="
 
             w-full
-            block px-16 py-2 mt-2
+            block pl-2 py-2 mt-2
             border-gray-300
             rounded-md
             shadow-sm
@@ -26,7 +26,7 @@ const TaskForm = () => (
             focus:ring-indigo-200
             focus:ring-opacity-50
           "
-              placeholder="John cooks"
+              placeholder="Task name"
             />
           </label>
         </div>
@@ -40,7 +40,7 @@ const TaskForm = () => (
               className="
             block
             w-full
-            mt-2 px-16 py-2
+            mt-2 pl-2 py-2
             border-gray-300
             rounded-md
             shadow-sm
@@ -49,7 +49,7 @@ const TaskForm = () => (
             focus:ring-indigo-200
             focus:ring-opacity-50
           "
-              placeholder="john.cooks@example.com"
+              placeholder="zak@gmail.com"
               required
             />
           </label>
@@ -63,7 +63,7 @@ const TaskForm = () => (
               className="
             block
             w-full
-            mt-2 px-16 py-8
+            mt-2 pl-2 pt-2 pb-8
             border-gray-300
             rounded-md
             shadow-sm
