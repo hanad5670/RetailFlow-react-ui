@@ -1,5 +1,5 @@
 import React from 'react';
-import { KanbanComponent, ColumnsDirective, ColumnDirective } from '@syncfusion/ej2-react-kanban';
+import { KanbanComponent, ColumnsDirective, ColumnDirective, Kanban } from '@syncfusion/ej2-react-kanban';
 import { DialogComponent } from '@syncfusion/ej2-react-popups';
 import TaskForm from '../components/TaskForm';
 import { kanbanData, kanbanGrid } from '../data/dummy';
@@ -29,7 +29,7 @@ const ManageTasks = () => {
       <KanbanComponent
         id="kanban"
         keyField="Status"
-        dataSource={kanbanData}
+        swimlaneSettings={{ keyField: 'Assignee' }}dataSource={kanbanData}
         cardSettings={{ contentField: 'Summary', headerField: 'Id' }}
       >
         <ColumnsDirective>

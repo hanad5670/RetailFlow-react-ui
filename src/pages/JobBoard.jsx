@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ScheduleComponent, ViewsDirective, ViewDirective, Day, Week, WorkWeek, Month, Agenda, Inject, Resize, DragAndDrop } from '@syncfusion/ej2-react-schedule';
 import { DatePickerComponent } from '@syncfusion/ej2-react-calendars';
 
-import { scheduleData } from '../data/dummy';
+import { getAllTasks } from '../data/dummy';
 import { Header } from '../components';
 
 // eslint-disable-next-line react/destructuring-assignment
@@ -10,6 +10,7 @@ const PropertyPane = (props) => <div className="mt-5">{props.children}</div>;
 
 const JobBoard = () => {
   const [scheduleObj, setScheduleObj] = useState();
+  const [scheduleData, setScheduleData] = useState()
 
   const change = (args) => {
     scheduleObj.selectedDate = args.value;
@@ -21,9 +22,26 @@ const JobBoard = () => {
     arg.navigation.enable = true;
   };
 
+  useEffect(() => {
+    getAllTasks()
+      .then((res) => {
+        const data = res.map((item, i) => {
+         return {
+            Id: i+1,
+            Subject: item.name,
+            StartTime: item.startDate,
+            EndTime: item.endDate,
+            CategoryColor: '#1aaa55'
+          }
+        })
+        setScheduleData(data)
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
   return (
     <div className="m-2 md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl">
-      <Header category="App" title="Calendar" />
+      <Header category="App" title="Job Board" />
       <ScheduleComponent
         height="650px"
         ref={(schedule) => setScheduleObj(schedule)}
