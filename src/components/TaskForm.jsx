@@ -4,13 +4,13 @@ const TaskForm = () => (
   <div className="relative flex-col overflow-hidden ">
     <div className="w-full p-6 m-auto bg-white rounded-md shadow-xl shadow-rose-600/40 ring-2 ring-indigo-600">
       <h1 className="text-3xl font-semibold text-center text-indigo-700 underline uppercase decoration-wavy">
-        Contact Form
+        Task Creation
       </h1>
       <form className="mt-6">
         <div className="mb-2">
           {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
           <label>
-            <span className="text-gray-700">Your name</span>
+            <span className="text-gray-700">Task Name</span>
             <input
               type="text"
               name="name"
@@ -26,14 +26,14 @@ const TaskForm = () => (
             focus:ring-indigo-200
             focus:ring-opacity-50
           "
-              placeholder="Task name"
+              placeholder="What will be the task?"
             />
           </label>
         </div>
         <div className="mb-2">
           {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
           <label>
-            <span className="text-gray-700">Email address</span>
+            <span className="text-gray-700">Choose an assignee</span>
             <input
               name="email"
               type="email"
