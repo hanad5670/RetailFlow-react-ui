@@ -7,12 +7,14 @@ import { getTeamTasks } from '../data/dummy';
 
 import { DialogComponent } from '@syncfusion/ej2-react-popups';
 import TaskForm from '../components/TaskForm';
+import { useStateContext } from '../contexts/ContextProvider';
 
 const ManageTasks = () => {
   const [kanbanData, setKanbanData] = useState()
+  const {user} = useStateContext();
 
   useEffect(() => {
-    getTeamTasks()
+    getTeamTasks(user)
       .then((res) => {
         const data = res.map((item, i) => {
           let status = item.status;

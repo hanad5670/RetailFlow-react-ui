@@ -4,6 +4,7 @@ import { DatePickerComponent } from '@syncfusion/ej2-react-calendars';
 
 import { getAllTasks } from '../data/dummy';
 import { Header } from '../components';
+import { useStateContext } from '../contexts/ContextProvider';
 
 // eslint-disable-next-line react/destructuring-assignment
 const PropertyPane = (props) => <div className="mt-5">{props.children}</div>;
@@ -11,6 +12,7 @@ const PropertyPane = (props) => <div className="mt-5">{props.children}</div>;
 const JobBoard = () => {
   const [scheduleObj, setScheduleObj] = useState();
   const [scheduleData, setScheduleData] = useState()
+  const {user} = useStateContext();
 
   const change = (args) => {
     scheduleObj.selectedDate = args.value;
@@ -23,7 +25,7 @@ const JobBoard = () => {
   };
 
   useEffect(() => {
-    getAllTasks()
+    getAllTasks(user)
       .then((res) => {
         const data = res.map((item, i) => {
          return {

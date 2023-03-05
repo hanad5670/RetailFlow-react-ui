@@ -43,8 +43,7 @@ export const gridOrderStatus = (props) => (
   </button>
 );
 
-export const getAllTasks = async () => {
-      const { user } = useStateContext();
+export const getAllTasks = async (user) => {
       return await axios
         .get(`/api/user/${user._id}`)
         .then((res) => {
@@ -55,12 +54,7 @@ export const getAllTasks = async () => {
         });
 };
 
-export const getTeamTasks = async () => {
-  console.log("HERE!");
-  const allUsers = await axios.get(`/api/user`);
-  if (allUsers) {
-    const user = allUsers.data[0];
-    console.log(user?.teamId)
+export const getTeamTasks = async (user) => {
     return await axios
       .get(`/api/team/${user.teamId}`)
       .then((res) => {
@@ -70,7 +64,6 @@ export const getTeamTasks = async () => {
       .catch((err) => {
         return Promise.reject(err);
       });
-  }
 };
 
 export const scheduleData = [
